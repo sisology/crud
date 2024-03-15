@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.crudpractice.employee.model.dao.EmployeeMapper">
+
+    <select id="findAllEmp" resultType="com.spring.crudpractice.employee.model.dto.EmployeeDTO">
+        SELECT
+        emp_id,
+        emp_name,
+        phone,
+        email
+        FROM
+        employee
+        ORDER BY
+        emp_id
+    </select>
+
+    <insert id="insertEmp">
+        INSERT INTO
+            employee(emp_name, phone, email)
+        VALUES
+            (#{ empName }, #{ phone }, #{ email })
+    </insert>
+
+</mapper>

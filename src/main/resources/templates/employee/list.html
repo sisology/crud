@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>사원번호</th>
+            <th>사원이름</th>
+            <th>전화번호</th>
+            <th>이메일</th>
+        </tr>
+        <tr th:each="emp : ${empList}">
+            <td th:text="${emp.empId}"></td>
+            <td th:text="${emp.empName}"></td>
+            <td th:text="${emp.phone}"></td>
+            <td th:text="${emp.email}"></td>
+        </tr>
+    </table>
+</body>
+</html>
